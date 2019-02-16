@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<title>小米帐号 -注册</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/res/437b960/account-static/respassport/acc-2014/css/reset.css">
+<link type="text/css" rel="stylesheet" href="/static/res/48d6c45/account-static/respassport/acc-2014/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="https://account.xiaomi.com/static/res/31639b4/account-static/respassport/acc-2014/css/registerpwd.css">
+
+  
+<style>
+.facebook_area{
+  display:none!important;
+}
+.err_invalid{ padding-top:10px;}
+</style>
+</head>
+
+<script type="template/register" id="phone-step1">
+  <div class="regbox">
+    <div class="phone_step1">
+      <h4 class="tit_normal">
+        国家/地区
+      </h4>
+      <div class="listwrap select-regions" _region="CN">   
+        <div class="listtit reg-select-regions">
+          <div class="tits display_box c_b">
+            <p class="result-select-regions">中国</p>
+            <i class="icon_cirarr"></i>
+          </div>
+        </div>
+      </div>
+      <div class="region_tip_text">成功注册帐号后，国家/地区将不能被修改</div>
+      <h4 class="tit_normal">
+        手机号码
+      </h4>
+      <div class="listwrap_inside_panel c_b">
+        <div class="listwrap" id="select-cycode" _region="CN" _def_method="PH">
+          <div class="listtit" id="reg-phone-select-cty">
+            <div class="tits display_box c_b">
+              <p id="select-cycode-result">+86</p>
+              <i class="icon_arrow" ></i>
+            </div>
+          </div>
+        </div>
+        <div class="inputbg">
+          <input type='hidden' class="select-regions-input" name="region" value="CN"/>
+          <label class="labelbox" for="">
+            <input type="tel" name="phone" data-type="PH" placeholder="请输入手机号码">
+          </label>
+        </div>
+        <div class="err_tip">
+          <div class="dis_box"><em class="icon_error"></em><span></span></div>
+        </div>
+      </div>
+      <div class="override">
+        <h4 class="tit_normal">
+          图形验证码
+        </h4>
+        <div class="inputbg inputcode">
+          <label class="labelbox" for="">
+            <input class="code" type="text" name="icode" autocomplete="off" placeholder="图片验证码">
+          </label>
+          <img alt="图片验证码"  title="看不清换一张" class="icode_image code-image">
+        </div>
+        <div class="err_tip">
+          <div class="dis_box"><em class="icon_error"></em><span></span></div>
+        </div>
+      </div>
+      <div class="err_tip send-left-times">
+      </div>
+      <div class="err_tip err_invalid error-invalid">
+        <div class="dis_box"><em class="icon_error"></em><span></span></div>
+      </div>
+      <div class="fixed_bot mar_phone_dis1">
+        <input class="btn332 btn_reg_1 submit-step" data-to="phone-step2" type="submit" value="立即注册">
+        <div style="display:none" class="other_register_area">
+          <input class="btn332 btn_reg_2 change-view" data-to="EMAIL" type="button" value="用邮箱注册">
+          <div class="facebook_area"><a class="btn332 btn_reg_2 box_center sns-login-facebook" href="javascript:void(0)"><i class="iconfacebook"></i>使用Facebook登录</a></div>
+        </div>
+        <img style="display:none;" src="/pass/ajax/tick?biz=register&type=web&step=0" />
+      </div>
+    </div>
+  </div>
+  <div class="privacy_box">
+    <div class="msg">
+      <label class="n_checked now select-privacy">
+        <i class="icon_select"></i>注册帐号即表示您同意并愿意遵守小米 <a href="javascript:void(0)" class="inspect_link agreement_link">用户协议</a>和<a href="javascript:void(0)" class="inspect_link privacy_link"> 隐私政策 </a>
+      </label>
+    </div>
+  </div>
+</script>
+<script type="template/register" id="other-register">
+  <div class="other_register_area">
+    <div class="regbox">
+      <input class="btn332 btn_reg_2 change-view" data-to="EMAIL" type="button" value="用邮箱注册">
+      <div class="facebook_area"><a class="btn332 btn_reg_2 box_center sns-login-facebook" href="javascript:void(0)"><i class="iconfacebook"></i>使用Facebook登录</a></div>
+    </div>
+  </div>
+</script>
+<script type="template/register" id="phone-step2">
+  <div class="step2 phone_step2">
+    <div class="step2_txt">
+      <p>我们已经发送一条验证短信至<span class="address-place ff6"></span></p>
+      <p>请输入短信中的验证码</p>
+    </div>      
+    <div class="inputbg inputcode">
+      <label class="labelbox wap_resend_label">
+        <input class="resendcode" type="text" placeholder="请输入验证码" name="ticket">
+      </label>   
+      <span class="remain"><a class="color333 send-status" href="javascript:void(0)"></a></span>
+    </div>
+    <div class="err_tip">
+      <div class="dis_box"><em class="icon_error"></em><span></span></div>
+    </div>
+    <div class="err_tip send-left-times">
+    </div>
+    <div class="txt_link"> 
+      <span style="display:none;" class="verify-unavailable"><em class="acctip_icon icon_qst"></em>一直收不到验证短信？<a target="_blank"  href="https://static.account.xiaomi.com/html/faq/faqSMSerror.html">查看可能原因</a></span> 
+    </div>
+    <div class="fixed_bot mar_phone_dis2">
+      <input class="btn332 btn_reg_1  submit-step" type="submit" value="下一步">
+      <input class="btn332 btn_reg_2  change-view" data-to="phone-step1" type="button" value="返回">
+    </div>
+    <!--<a class="qst_txt dis_none unavailable-link" href="http://static.account.xiaomi.com/html/faq/faqSMSerror.html" target="blank" title="我为何收不到验证码？">我为何收不到验证码？</a>-->
+  </div>
+</script>
+<script type="template/register" id="phone-step3">
+  <div class="step3 phone_step3">
+    <dl>
+      <dt>
+        <h4>您注册的手机号为<span class="ff6 register-ph-num"></span></h4>
+        <h4>请设置您的密码：</h4>
+      </dt>
+      <dd>
+        <div class="inputbg">
+          <label class="labelbox" for="">
+            <input class="set-password" type="password" data-error=".error-password" name="password" placeholder="请输入密码">
+          </label>
+        </div>
+      </dd>
+      <dd>
+        <div class="inputbg">
+          <label class="labelbox" for=""><input name="repassword" type="password" data-repeat=".set-password" data-error=".error-password" placeholder="请输入确认密码"></label>
+        </div>
+      </dd>
+    </dl>
+    <div class="err_tip pwd_tip error-password" style="display:block;">
+      <div class="dis_box"><em class="icon_error"></em><span data-origin="密码长度8~16位，数字、字母、字符至少包含两种">密码长度8~16位，数字、字母、字符至少包含两种</span></div>
+    </div>
+    <div class="fixed_bot mar_phone_dis3"><input class="btn332 btn_reg_1 submit-step" type="submit" value="提交"></div>    
+  </div>
+</script>
+<script type="template/register" id="phone-step4">
+  <div class="phone_step4">
+    <div class="t_c register_succ">
+      <!--<img class="dis_none" width="68" height="68" src="/static/res/fdc1e65/passport/acc-2014/img/succ.jpg" alt="">
+      <img class="app_succ_img" width="81" height="81" src="/static/res/fdc1e65/passport/acc-2014/img/succ@2x.png" alt="">
+      <h4>注册成功!</h4>-->
+      <p class="register_id">您的小米ID是：<span class="ff6 user-id"></span></p>
+      <div class="sync_panel">
+        <div class="sync_box sync-box">
+          <div class="loading"></div>
+          <div class="sync_text">正在同步您的账号数据</div>
+        </div>
+        <div class="sync_fail sync-result-fail c_b">
+          <div class="sync_fail_con">
+            <i class="icon_warning"></i><div class="fail_text">您的账户数据有延迟，将只能使用小米ID登录，如使用邮箱、手机登录，请稍等几分钟。</div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed_bot mar_phone_dis4">
+        <a class="btn332 btn_reg_1 gray_disabled login-redirect" href="javascript:void(0)">
+          登录
+        </a>
+      </div>
+    </div>  
+  </div>
+</script>
+<script type="template/register" id="email-step1">
+  <div class="regbox">
+    <div class="email_step1 emailregbox">
+      <h4 class="tit_normal">
+        国家/地区
+      </h4>
+      <div class="listwrap select-regions" _region="CN">   
+        <div class="listtit reg-select-regions">
+          <div class="tits display_box c_b">
+            <p class="result-select-regions">中国</p>
+            <i class="icon_cirarr"></i>
+          </div>
+        </div>
+      </div>
+      <h4 class="tit_normal">
+        邮箱
+      </h4>
+      <div class="inputbg">
+        <input type='hidden' class="select-regions-input" name="region" value="CN"/>
+        <label class="labelbox" for="">
+          <input type="email" placeholder="请输入邮箱" name="email">
+        </label>
+      </div>
+      <div class="err_tip">
+        <div class="dis_box"><em class="icon_error"></em><span></span></div>
+      </div>
+      <div class="err_tip err_invalid error-invalid">
+        <div class="dis_box"><em class="icon_error"></em><span></span></div>
+      </div>
+      <div class="fixed_bot">
+        <input class="btn332 btn_reg_1 submit-step" type="submit" value="立即注册">
+        <div class="other_register_area">
+          <input class="btn332 btn_reg_2 change-view" data-to="PHONE" type="button" value="用手机号码注册">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="privacy_box">
+    <div class="msg">
+      <label class="n_checked now select-privacy">
+        <i class="icon_select"></i>注册帐号即表示您同意并愿意遵守小米 <a href="javascript:void(0)" class="inspect_link agreement_link">用户协议</a>和<a href="javascript:void(0)" class="inspect_link privacy_link"> 隐私政策 </a>
+      </label>
+    </div>
+  </div>
+</script>
+<script type="template/register" id="email-step2">
+  <div class="step3 email_step2">
+    <dl>
+      <dt><h4>即将使用&nbsp;<span class="address-place"></span>&nbsp;进行注册</h4></dt>
+      <dd>
+        <div class="inputbg">
+          <label class="labelbox" for=""><input type="password" class="set-password" name="password" data-error=".error-password" placeholder="请输入密码"></label>
+        </div>
+      </dd>
+      <dd>
+        <div class="inputbg">
+          <label class="labelbox" for=""><input type="password" name="repassword" data-error=".error-password" data-repeat=".set-password" placeholder="请输入确认密码"></label>
+        </div>
+        <div class="err_tip pwd_tip error-password" style="display:block;">
+          <div class="dis_box"><em class="icon_error"></em><span data-origin="密码长度8~16位，数字、字母、字符至少包含两种">密码长度8~16位，数字、字母、字符至少包含两种</span></div>
+        </div>
+      </dd>
+      <dd>
+        <div class="inputbg inputcode">
+          <label class="labelbox" for=""><input class="code" name="inputcode" type="text" autocomplete="off" placeholder="图片验证码"></label>
+          <img alt="图片验证码" class="icode_image code-image" title="看不清换一张">
+        </div>
+        <div class="err_tip">
+          <div class="dis_box"><em class="icon_error"></em><span></span></div>
+        </div>
+      </dd>
+    </dl>
+    <div class="fixed_bot mar_mail_dis2">
+    <input class="btn332 btn_reg_1  submit-step" type="submit" value="提交">
+    <input class="btn332 btn_reg_2  change-view" data-to="email-step1" type="button" value="上一步">
+    </div>
+  </div>
+</script>
+<script type="template/register" id="email-step3">
+  <div class="regbox">
+    <div class="hintro">
+      <p>还差一步，请激活您的帐号</p>
+      <p>系统已经发送了一封激活邮件到您的邮箱 <span class="address-place ff6"></span></p>
+      <p>点击邮件中的链接便可激活您的帐号</p>
+    </div>
+    <div class="fixed_bot mar_mail_dis3">
+      <a class="btn332 btn_reg_1 email-host" target="_blank" href="javascript:void(0)">前往邮箱</a>
+      <a class="btn332 btn_reg_2 go-back" href="/pass/serviceLogin?callback=https://account.xiaomi.com&amp;sid=passport">返回首页</a>
+    </div>
+    <div class="n_loss">
+      <a href="javascript:void(0)" class="resend-email" title="点此重新发送激活邮件">点此重新发送激活邮件</a>
+    </div>
+  </div>
+</script>
+<script type="template/register" id="phone-resend">
+  <div class="step2 phone-resend">
+    <div>
+      <h4 class="pdbot10">请输入图片验证码</h4>
+      <div class="inputbg inputcode">
+        <label class="labelbox" for="">
+        <input type="hidden" name="phone" class="resend-phone-val">
+        <input class="code" name="icode" type="text" autocomplete="off" placeholder="图片验证码">
+        </label>
+        <img alt="图片验证码" class="icode_image code-image" title="看不清换一张">
+      </div>
+      <div class="err_tip">
+        <div class="dis_box"><em class="icon_error"></em><span></span></div>
+      </div>
+      <div class="err_tip send-left-times">
+      </div>
+      <input class="btn332 btn_reg_1 submit-step" type="submit" value="确定">
+      <a class="btn332 btn_reg_2 change-view" data-to="phone-step2" href="javascript:void(0)">返回</a>
+    </div>
+    <!--<a class="qst_txt dis_none unavailable-link" href="http://static.account.xiaomi.com/html/faq/faqSMSerror.html" target="blank" title="我为何收不到验证码？">我为何收不到验证码？</a>-->
+  </div>
+</script>
+<script type="template/register" id="phone-confirm">
+<div class="regagabox phone-confirm">
+  <div class="confirm_box">        
+    <div class="single_imgarea">
+      <div class="na-img-area marauto cursor_d">
+        <div class="na-img-bg-area us-portraitUrl"></div>
+      </div>          
+      <p class="us_name us-userName"></p>
+      <p class="us_id us-userId"></p>
+    </div>
+    <div class="pt10 pb40 t_c">这个小米帐号是你的吗？</div>      
+  </div>
+  <div class="fixed_bot">
+    <a class="btn332 btn_reg_2 submit-token-login" href="#">是我的，直接登录</a>    
+    <input class="btn332 btn_reg_2  change-view" data-to="phone-step3"  data-source="tokenRegister" type="button" value="不是我的，注册新帐号">
+  </div>
+</div>
+</script>
+<body class="zh_CN">
+<script
+  src="/static/res/611ff85/account-static/scripts/geetest/gt.js">
+</script>
+<div class="wrapper">
+<div class="wrap">
+<div class="layout">
+  <div class="n-frame device-frame reg_frame" id="main_container">
+    <div class="external_logo_area"><a class="milogo" href="javascript:void(0)"></a></div>
+    <div class="title-item t_c">
+      <h4 class="title_big30">注册小米帐号</h4>          
+    </div>  
+  </div>
+</div>
+</div>
+</div>
+<div class="n-footer">
+  <div class="nf-link-area clearfix">
+  <ul class="lang-select-list">
+    <li><a class="lang-select-li" href="javascript:void(0)" data-lang="zh_CN">简体</a>|</li>
+    <li><a class="lang-select-li" href="javascript:void(0)" data-lang="zh_TW">繁体</a>|</li>
+    <li><a class="lang-select-li" href="javascript:void(0)" data-lang="en">English</a></li>
+    
+      |<li><a class="a_critical" href="https://static.account.xiaomi.com/html/faq/faqList.html" target="_blank"><em></em>常见问题</a></li>
+    
+  </ul>
+  </div>
+  <p class="nf-intro"><span>小米公司版权所有-京ICP备10046444-<a class="beianlink beian-record-link" target="_blank"><span></span>京公网安备11010802020134号</a>-京ICP证110507号</span></p>
+</div>
+</body>
+</html>
